@@ -1,9 +1,9 @@
-package com.aib.mapper;
+package com.aib.dao;
 
 import com.aib.entity.UserEntity;
 
 import java.util.List;
 
 public interface UserMapper {
-    List<UserEntity> findUserByName(String phone);
+    UserEntity findUserByPhone(String phone);
 }
