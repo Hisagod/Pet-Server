@@ -1,8 +1,5 @@
 package com.aib.entity;
 
-import org.springframework.stereotype.Repository;
-
-@Repository(value = "userEntity")
 public class UserEntity {
     private int id;
     private String phone;
