@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 标记是一个Service
+ */
 @Service
 public class LoginServiceImpl implements LoginService {
+    //注入
     @Resource
     UserMapper userMapper;
 
