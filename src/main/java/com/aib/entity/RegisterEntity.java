@@ -1,17 +1,8 @@
 package com.aib.entity;
 
-public class UserEntity {
-    private int id;
+public class RegisterEntity {
     private String phone;
     private String pwd;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getPhone() {
         return phone;
@@ -31,9 +22,8 @@ public class UserEntity {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", phone='" + phone + '\'' +
+        return "RegisterEntity{" +
+                "phone='" + phone + '\'' +
                 ", pwd='" + pwd + '\'' +
                 '}';
     }

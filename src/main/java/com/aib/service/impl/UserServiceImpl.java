@@ -1,8 +1,8 @@
 package com.aib.service.impl;
 
 import com.aib.dao.UserMapper;
-import com.aib.entity.UserEntity;
-import com.aib.service.LoginService;
+import com.aib.entity.RegisterEntity;
+import com.aib.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -12,13 +12,20 @@ import java.util.List;
  * 标记是一个Service
  */
 @Service
-public class LoginServiceImpl implements LoginService {
+public class UserServiceImpl implements UserService {
     //注入
     @Resource
     UserMapper userMapper;
 
     @Override
-    public List<UserEntity> login() {
+    public void register(RegisterEntity entity) {
+        userMapper.registerUser(entity);
+    }
+
+    @Override
+    public List<RegisterEntity> login() {
        return userMapper.findUserByPhone();
     }
+
+
 }
