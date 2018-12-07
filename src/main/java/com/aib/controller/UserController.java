@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 用户业务逻辑
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
