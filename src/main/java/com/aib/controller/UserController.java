@@ -25,10 +25,17 @@ public class UserController {
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     String userRegister(RegisterEntity entity, Model model) {
-        userService.register(entity);
-        BaseEntity<String> baseEntity = new BaseEntity<>(200, "成功", "注册成功");
-        String json = new Gson().toJson(baseEntity);
-        model.addAttribute("json", json);
+        RegisterEntity user = userService.findUser(entity.getPhone());
+        if (user != null) {
+            BaseEntity<String> baseEntity = new BaseEntity<>(0, "账号已注册", null);
+            String json = new Gson().toJson(baseEntity);
+            model.addAttribute("json", json);
+        } else {
+            userService.register(entity);
+            BaseEntity<String> baseEntity = new BaseEntity<>(1, "注册成功", null);
+            String json = new Gson().toJson(baseEntity);
+            model.addAttribute("json", json);
+        }
         return "index";
     }
 

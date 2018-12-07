@@ -23,9 +23,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<RegisterEntity> login() {
-       return userMapper.findUserByPhone();
+    public RegisterEntity findUser(String phone) {
+        RegisterEntity entity = userMapper.findUserByPhone(phone);
+        return entity;
     }
 
+    @Override
+    public List<RegisterEntity> login() {
+        return null;
+    }
 
 }
